@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Jay Industries </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-highway.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body> 
+
+    <section class="navigation w3-metro-light-blue w3-container">
+      <button onclick="goToTop()" id="back-to-top" title="Go to top"><i class="fa fa-toggle-up"></i></button>
+      <nav class="nav-container">
+        <div class="logo w3-padding-large"> 
+          <p> JAYINDUSTRIES</p>
+        </div>
+        <div class="mobile-button">
+          <span style="float: right;" onclick="toggleMobileNavigation()">&#9776;</span>
+        </div>
+        <div class="links">
+          <a href="#about" >ABOUT</a>-
+          <a href="#contact" >CONTACT</a>            
+        </div>
+        <div id="mobile-sidenav" class="mobile-links w3-sand">
+          <a href="javascript:void(0)" class="closebtn w3-round" onclick="toggleMobileNavigation()">&times;</a>
+          <a href="#about" onclick="toggleMobileNavigation()">ABOUT</a>
+          <a href="#contact" onclick="toggleMobileNavigation()">CONTACT</a>
+        </div>
+      </nav>
+    </section>
+
+    <section class="hero w3-padding-large w3-container" style="background-image: url('https://i.ibb.co/Lnxt8RK/bg3.jpg'); background-size: cover; background-position: center;">
+        <!-- section content here -->
+    </section>
+
+    <section class="about w3-padding-large w3-container" id="about">
+      <div class="content container w3-round-large">
+        <h2 style="text-align: center;">- Our Mission -</h2>
+        <p style="text-align: center;"> To provide high-quality construction services that exceed our clients' expectations, 
+          while upholding the highest standards of safety, integrity, and sustainability.</p>
+        <h3 style="text-align: center;">- About -</h3>
+        <p>Jay Industries is a construction company that has been in business for 7 years. 
+          They focus on providing high-quality construction services that exceed client expectations while maintaining safety, integrity and sustainability. 
+          They deliver projects on time and within budget, and strive to make a positive impact on the world through their work.</p>
+      </div>
+
+  
+    <section class="testimonials w3-container w3-panel" style="padding: 50px;">
+      <h2 style="text-align: center;">- Some of our Projects -</h2>
+      <div class="slideshow-container">
+
+      <div class="mySlides">
+        <p class="author"><strong>constructed school</strong></p></br>
+
+        <p class="author"><strong>Home Commercial Buildings </strong></p>
+      </div>
+
+      </div>
+
+    </section>
+
+  
+
+    <section class="w3-panel w3-container content why-us" style="padding: 50px;">
+      <h2 style="text-align: center;">- Why choose us? -</h2>
+      <div class="container boxes">
+        <div class="box w3-round-large">
+          More than 7 years of experience
+        </div>
+        <div class="box w3-round-large">
+          Over 1500 of consultations
+        </div>
+        <div class="box w3-round-large">
+          100% secure
+        </div>
+      </div>
+    </section>
+
+    <section class="contact w3-container contact" id="contact">
+        <div class="short-contact">
+          <h2>- Our contact info - </h2>
+          <div class="w3-large contact-info">
+            <i class="fa fa-address-card"></i><span style="margin-left:10px;"><a href="https://maps.apple.com/?auid=8461505344858209001&ll=21.276184,83.053760&lsp=7618&q=Dropped%20Pin&t=m " target="_blank">kena,Saraipali CG. INDIA</a></span><br>
+            <i class="fa fa-envelope"></i><span style="margin-left:10px;"><a href="https://mail.google.com/mail/u/jayindustries@gmail.com" target="_blank">jayindustries@gmail.com</a></span><br>
+            <i class="fa fa-phone-square"></i><span style="margin-left:10px;"><a href="tel:+919926826223">+91 9926826223</a></span><br>
+          </div>
+        </div>
+      </section>
+
+    <section class="w3-container footer">
+      <p class="w3-center logo">© 2022 - JAY INDUSTRIES- All rights reserved</p>
+    </section>
+
+
+  <script async>
+      const backToTop = document.getElementById("back-to-top");
+
+      function toggleMobileNavigation() {
+        const mobileNavigation = document.getElementById("mobile-sidenav");
+        mobileNavigation.classList.toggle('mobile-links-active');
+      }
+
+      function goToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+
+      function scroll() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) backToTop.style.display = "block";
+        else backToTop.style.display = "none";
+      }
+
+      window.onscroll = function() {scroll()};
+  </script>
+  <script async>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+      }
+  </script>
+  </body>
+</html>
